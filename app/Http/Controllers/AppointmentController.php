@@ -90,6 +90,7 @@ class AppointmentController extends Controller
         $appointment->startDateTime = Carbon::parse($request->startDateTime);
         $appointment->endDateTime = Carbon::parse($request->endDateTime);
         $appointment->save();
+        
         return redirect()->route('appointments.index')
         ->with('success','appointment updated successfully');
     }
